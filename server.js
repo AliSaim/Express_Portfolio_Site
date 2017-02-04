@@ -1,28 +1,90 @@
-let express = require('express');
- let app = express();
+#!/usr/bin/env node
 
- //create the port constant
-const localPort = 3000;
+/**
+ * Module dependencies.
+ */
 
+var app = require('./app');
+var debug = require('debug')('ali-saim-express-portfolio-site:server');
+var http = require('http');
 
-//Get port from environment and store in express
-let port = process.env.PORT || localPort;
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-//start listening on the port
-app.listen(port); 
-console.log(`Server listening at port: ${port}`);
+/**
+ * Create HTTP server.
+ */
 
+var server = http.createServer(app);
 
-//ROUTING - mounted our routes
+/**
+ * Listen on provided port, on all network interfaces.
+ */
 
-//second route is '/hello'
-app.use('/hello',  (req, res, next) => {
-    res.send("Hello World!");
-});
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
 
-//main route for the root
-app.use('/',  (req, res, next) => {
-    res.send("Welcome");
-});
-module.exports = app;
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}

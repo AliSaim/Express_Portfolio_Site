@@ -1,23 +1,31 @@
 {
-  "name": "ali_saim_express_portfolio_site",
-  "version": "1.0.0",
-  "description": "comp308 express portfolio site - assignment 1",
-  "main": "server.js",
+  "name": "ali-saim-express-portfolio-site",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "engines": {
     "node": ">=6.0.0",
     "npm": ">=3.5.0"
   },
+  "dependencies": {
+    "body-parser": "~1.16.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "ejs": "~2.5.5",
+    "express": "~4.14.1",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.2"
+  },
+  "description": "###Ali Saim - Express Portfolio Site",
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AliSaim/Express_Portfolio_Site.git"
   },
   "keywords": [
     "NodeJS",
-    "JavaScript",
     "ExpressJS"
   ],
   "author": "Ali Saim - 300759480",
@@ -25,8 +33,5 @@
   "bugs": {
     "url": "https://github.com/AliSaim/Express_Portfolio_Site/issues"
   },
-  "homepage": "https://github.com/AliSaim/Express_Portfolio_Site#readme",
-  "dependencies": {
-    "express": "^4.14.1"
-  }
+  "homepage": "https://github.com/AliSaim/Express_Portfolio_Site#readme"
 }
