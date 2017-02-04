@@ -1,0 +1,28 @@
+{
+  "name": "ali_saim_express_portfolio_site",
+  "version": "1.0.0",
+  "description": "comp308 express portfolio site - assignment 1",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AliSaim/Express_Portfolio_Site.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "JavaScript",
+    "ExpressJS"
+  ],
+  "author": "Ali Saim - 300759480",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AliSaim/Express_Portfolio_Site/issues"
+  },
+  "homepage": "https://github.com/AliSaim/Express_Portfolio_Site#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}
