@@ -6,21 +6,17 @@ const port = 3000;
 
 //start listening on the port
 app.listen(port);
-console.log(`Server listening at port:   ${port}`);
+console.log(`Server listening at port: ${port}`);
 
 //ROUTING - mounted our routes
 
 //second route is '/hello'
 app.use('/hello',  (req, res, next) => {
-    res.end("Hello world!");
-
-  next();
+    res.send("Hello World!");
 });
 
 //main route for the root
 app.use('/',  (req, res, next) => {
-    res.setHeader('Content-Type', 'text/plain');
-    res.end("Welcome");
-
-  next();
+    res.send("Welcome");
 });
+module.exports = app;
