@@ -2,11 +2,17 @@ let express = require('express');
  let app = express();
 
  //create the port constant
-const port = 3000;
+const localPort = 3000;
+
+
+//Get port from environment and store in express
+let port = process.env.PORT || localPort;
+app.set('port', port);
 
 //start listening on the port
-app.listen(port);
+app.listen(port); 
 console.log(`Server listening at port: ${port}`);
+
 
 //ROUTING - mounted our routes
 
